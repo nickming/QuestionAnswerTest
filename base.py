@@ -14,3 +14,6 @@ class BaseTest(object):
 
     def sleep(self,time):
         MonkeyRunner.sleep(time)
+
+    def back(self):
+        self.tool.back()
