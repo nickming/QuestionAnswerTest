@@ -105,7 +105,7 @@ class TestTool:
         path = PATH(os.getcwd() + '/logs')
         if not os.path.exists(PATH(os.getcwd() + '/logs')):
             os.makedirs(path)
-        filename = time.strftime('%Y-%m-%d-logs.txt', time.localtime(time.time()))
+        filename = time.strftime('%Y-%m-%d-%H:%M:%S-logs.txt', time.localtime(time.time()))
         file = open(os.getcwd() + '/logs/' + filename, 'w+')
         file.write(current_logs)
 
@@ -121,3 +121,8 @@ class TestTool:
 
     def print_exception_info(self):
         self.print_log(traceback.format_exc())
+
+    #调用当前方法必须获得焦点,即键盘弹出,光标显示
+    def input_content(self):
+        os.system('adb shell input text \"hello world!\"')
+

@@ -17,3 +17,6 @@ class BaseTest(object):
 
     def back(self):
         self.tool.back()
+
+    def start_test(self):
+        pass
