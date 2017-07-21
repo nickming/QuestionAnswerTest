@@ -25,7 +25,6 @@ class QuestionLibraryTest(base.BaseTest):
         # 选择年级
         x_grade = random.randint(135, 758)
         y_grade = random.randint(95, 409)
-        self.print_log("point of y_grade: ", y_grade)
         self.tool.touch_point(x_grade, y_grade)
         self.sleep(2)
 
@@ -166,6 +165,7 @@ class QuestionLibraryTest(base.BaseTest):
         self.sleep(1)
         self.answer_question()
         self.print_log('******刷题模块测试结束******')
+        self.back()
 
 
     #     def practice_answered_question(self):

@@ -17,14 +17,17 @@ class SearchTest(base.BaseTest):
 
     def open_search(self):
         self.print_log('进入搜索页面')
+        self.sleep(2)
         self.tool.touch_view('id/main_search_id_parent')
         self.sleep(1)
 
     def test_camera(self):
         self.print_log('进入拍照模块')
+        self.sleep(2)
         self.tool.touch_view('id/quiz_camera')
         self.sleep(2)
         self.print_log('进行拍照')
+        self.sleep(2)
         self.tool.touch_view('id/capture_image_button')
         self.print_log('进行上下拖动')
         self.tool.drag(500, 370, 500, 233, 0.5, 10)
@@ -137,6 +140,7 @@ class SearchTest(base.BaseTest):
             self.sleep(2)
 
     def test_keyboard(self):
+        self.sleep(2)
         self.tool.touch_view('id/quiz_ime')
         self.print_log('进入键盘输入模块')
         self.sleep(1)
@@ -145,6 +149,7 @@ class SearchTest(base.BaseTest):
         self.tool.touch_view('id/search')
         self.__handle_search_result()
         self.print_log('键盘测试模块完成')
+        self.back()
 
     def start_test(self):
         self.__start_search_test()

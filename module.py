@@ -72,24 +72,27 @@ class ModuleTest(object):
         
 
     def run_test(self):
+        
         try:
             self.init_activity()
+            self.MonkeyRunner.sleep(2)
             #搜题模块
-            self.__start_search()
-
+            # self.__start_search()
+            self.MonkeyRunner.sleep(2)
             #刷题模块
-            # self.__start_pratise()
-
+            self.__start_pratise()
+            self.MonkeyRunner.sleep(2)
             #题库模块
             self.__start_market()
-
+            self.MonkeyRunner.sleep(2)
             #我的模块
             # self.tool.write_log_to_file()
+            sself.MonkeyRunner.sleep(2)
             self.__start_mime()
-
         except BaseException:
             self.tool.print_log(traceback.format_exc())
             self.tool.write_log_to_file()
+        self.tool.write_log_to_file()
 
 
     def exit(self):
