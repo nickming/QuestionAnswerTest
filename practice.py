@@ -145,6 +145,7 @@ class QuestionLibraryTest(base.BaseTest):
             self.answer_special_question()
             self.sleep(1)
             self.tool.drag(745, 570, 17, 570, 1, 10)
+            
         self.back()
 
     def start_test(self):
@@ -165,6 +166,7 @@ class QuestionLibraryTest(base.BaseTest):
         self.sleep(1)
         self.answer_question()
         self.print_log('******刷题模块测试结束******')
+        self.sleep(3)
         self.back()
 
 

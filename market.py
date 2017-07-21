@@ -79,14 +79,28 @@ class MarketTest(base.BaseTest):
             random_y=random.randint(100,946)
             self.sleep(1)
             self.tool.touch_point(random_x,random_y)
-            self.sleep(1)
+            self.sleep(2)
             if self.tool.is_component_exist('id/header_container'):
                 self.print_log('进入详细信息页面')
                 self.__handle_search_result()
                 self.sleep(2)
                 self.back()
                 break
+            elif self.tool.is_component_exist('id/wv_content'):
+                self.print_log('进入详情页面')
+                self.sleep(5)
+                self.print_log('随机点击')
+                for i in range(10):
+                    ran_x = random.randint(0, 768)
+                    ran_y = random.randint(147, 800)
+                    self.tool.touch_point(ran_x,ran_y)
+                self.sleep(2)
+                self.back()
         self.print_log('内容测试完毕')
+        if self.tool.is_component_exist('id/pop_select'):
+            pass
+        else:
+            self.back()
         #测试下拉刷新以及上拉加载
         for i in range(3):
             self.print_log('测试下拉刷新')
