@@ -23,7 +23,7 @@ class SearchTest(base.BaseTest):
     def test_camera(self):
         self.print_log('进入拍照模块')
         self.tool.touch_view('id/quiz_camera')
-        self.sleep(4)
+        self.sleep(2)
         self.print_log('进行拍照')
         self.tool.touch_view('id/capture_image_button')
         self.print_log('进行上下拖动')
@@ -147,9 +147,9 @@ class SearchTest(base.BaseTest):
         self.print_log('键盘测试模块完成')
 
     def start_test(self):
-        pass
+        self.__start_search_test()
 
-    def start_search_test(self):
+    def __start_search_test(self):
         self.print_log('******搜索模块测试开始******')
         self.open_search()
         self.sleep(1)

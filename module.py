@@ -17,6 +17,7 @@ class ModuleTest(object):
         self.tool = Tool.TestTool()
         self.MonkeyRunner = Tool.MonkeyRunner
         self.search=search.SearchTest()
+        self.market=market.MarketTest()
 
     def init_activity(self):
         self.tool.print_log('进入智能答疑')
@@ -44,15 +45,31 @@ class ModuleTest(object):
         self.tool.touch_view('id/id/main_bottom_me_id')
         self.MonkeyRunner.sleep(1)
 
+    def __start_search(self):
+        self.open_search_question()
+        self.search.start_test()
+        self.MonkeyRunner.sleep(2)
+
+    def __start_market(self):
+        self.open_question_market()
+        self.market.start_test()
+        self.MonkeyRunner.sleep(2)
+
+    def __start_pratise(self):
+        pass
+
+    def __start_mime(self):
+        pass
+        
+
     def run_test(self):
         try:
             self.init_activity()
             #搜题模块
-            self.open_search_question()
-            self.search.start_search_test()
-            self.MonkeyRunner.sleep(2)
+            # self.__start_search()
             #刷题模块
             #题库模块
+            self.__start_market()
             #我的模块
             self.tool.write_log_to_file()
         except BaseException:
