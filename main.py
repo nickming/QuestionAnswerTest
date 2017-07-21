@@ -10,7 +10,7 @@ module_test=module.ModuleTest()
 device_tool=tool.TestTool()
 
 
-def startTest(self,count):
+def startTest(count):
     try:
         for i in range(count):
             temp=str(i)
