@@ -13,8 +13,7 @@ class QuestionLibraryTest(base.BaseTest):
         super(QuestionLibraryTest, self).__init__()
 
     def open_practice(self):
-        self.print_log('选择刷题模块')
-        # self.tool.startActivity('com.bbk.videosearchstudy/.Activity_Two')
+        self.print_log('进入「 刷题 」页面')
         self.tool.touch_point(288, 982) # 点击刷题
         self.sleep(3)
     
@@ -22,33 +21,21 @@ class QuestionLibraryTest(base.BaseTest):
         self.print_log("选择做题教材")
         self.sleep(1)
         self.tool.touch_point(398,42)
-        # children_count = self.tool.get_children_count('id/gradeGridView')
-        # self.print_log("count of children=",children_count)
-        # index = random.randint(0, (children_count-1))
-        # self.print_log('the random num=', index)
-        # childView =  self.tool.getChildView('id/gradeGridView', [index])
-        # self.tool.touch_button(childView, 0, 0)
         self.sleep(1)
         # 选择年级
         x_grade = random.randint(135, 758)
         y_grade = random.randint(95, 409)
-        # self.print_log("point of x_grade: ", x_grade)
-        # self.print_log("point of y_grade: ", y_grade)
+        self.print_log("point of y_grade: ", y_grade)
         self.tool.touch_point(x_grade, y_grade)
         self.sleep(2)
 
         # 选择科目
         x_subject = random.randint(135, 758)
-        # self.print_log("point of x_subject: ", x_subject)
-        # self.print_log("point of y_subject: ", 448)
         self.tool.touch_point(x_subject, 448)
         self.sleep(2)
+
         # 选择出版社
         x_press = random.randint(135,758)
-        # y_press = random.randint(495,643)
-        # self.print_log("point of x_press: ", x_press)
-        # self.print_log("point of y_press: ", y_press)
-        self.sleep(1)
         self.tool.touch_point(x_press, 508)
 
         # 选择完毕，退出选择框状态
@@ -206,30 +193,3 @@ class QuestionLibraryTest(base.BaseTest):
     #         self.tool.drag(745, 570, 17, 570, 1, 10)
     #     self.back()
     #     self.back()
-
-# tool = TestTool()
-# self.tool.startActivity('com.bbk.videosearchstudy/.Activity_Two')
-# self.sleep(3)
-# self.print_log('选择刷题模块')
-# self.tool.touch_point(288, 982)
-#
-# self.sleep(1)
-# question_lib_test = question_library_test()
-# self.sleep(1)
-# question_lib_test.choose_textbook()
-# self.sleep(1)
-# question_lib_test.check_forcast_core()
-# self.sleep(1)
-# question_lib_test.switch_question_list()
-# self.sleep(1)
-# question_lib_test.choose_question()
-# self.sleep(1)
-# question_lib_test.answer_question()
-# self.sleep(3)
-# question_lib_test.practice_answered_question()
-
-
-
-
-
-

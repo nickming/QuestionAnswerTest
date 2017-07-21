@@ -19,6 +19,7 @@ class ModuleTest(object):
         self.search=search.SearchTest()
         self.market=market.MarketTest()
         self.practice = practice.QuestionLibraryTest()
+        self.mime =  mime.MineTest()
 
     def init_activity(self):
         self.tool.print_log('进入智能答疑')
@@ -44,7 +45,7 @@ class ModuleTest(object):
 
     def open_mime(self):
         self.tool.print_log('进入我的模块')
-        self.tool.touch_view('id/id/main_bottom_me_id')
+        self.tool.touch_view('id/main_bottom_me_id')
         self.MonkeyRunner.sleep(1)
 
     def __start_search(self):
@@ -64,6 +65,9 @@ class ModuleTest(object):
         pass
 
     def __start_mime(self):
+        self.open_mime()
+        self.mime.start_test()
+        self.MonkeyRunner.sleep(2)
         pass
         
 
@@ -74,13 +78,15 @@ class ModuleTest(object):
             # self.__start_search()
 
             #刷题模块
-            self.__start_pratise()
+            # self.__start_pratise()
 
             #题库模块
             # self.__start_market()
 
             #我的模块
             # self.tool.write_log_to_file()
+            self.__start_mime()
+
         except BaseException:
             self.tool.print_log(traceback.format_exc())
             self.tool.write_log_to_file()
