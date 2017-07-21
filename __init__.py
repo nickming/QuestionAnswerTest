@@ -5,5 +5,5 @@ import question.tool
 import question.main
 import question.search
 import question.module
-import question.pratise
+import question.practice
 import question.base

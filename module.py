@@ -3,7 +3,7 @@
 
 import tool as Tool
 import search
-import pratise
+import practice
 import mime
 import market
 import traceback
@@ -18,6 +18,7 @@ class ModuleTest(object):
         self.MonkeyRunner = Tool.MonkeyRunner
         self.search=search.SearchTest()
         self.market=market.MarketTest()
+        self.practice = practice.QuestionLibraryTest()
 
     def init_activity(self):
         self.tool.print_log('进入智能答疑')
@@ -31,6 +32,7 @@ class ModuleTest(object):
         self.MonkeyRunner.sleep(1)
 
     def open_pratise_question(self):
+        self.MonkeyRunner.sleep(1)
         self.tool.print_log('进入刷题模块')
         self.tool.touch_view('id/main_bottom_pratise_id')
         self.MonkeyRunner.sleep(1)
@@ -56,6 +58,9 @@ class ModuleTest(object):
         self.MonkeyRunner.sleep(2)
 
     def __start_pratise(self):
+        self.open_pratise_question()
+        self.practice.start_test()
+        self.MonkeyRunner.sleep(2)
         pass
 
     def __start_mime(self):
@@ -67,11 +72,15 @@ class ModuleTest(object):
             self.init_activity()
             #搜题模块
             # self.__start_search()
+
             #刷题模块
+            self.__start_pratise()
+
             #题库模块
-            self.__start_market()
+            # self.__start_market()
+
             #我的模块
-            self.tool.write_log_to_file()
+            # self.tool.write_log_to_file()
         except BaseException:
             self.tool.print_log(traceback.format_exc())
             self.tool.write_log_to_file()

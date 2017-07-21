@@ -124,5 +124,6 @@ class TestTool:
 
     #调用当前方法必须获得焦点,即键盘弹出,光标显示
     def input_content(self):
-        os.system('adb shell input text \"hello world!\"')
+        os.system('adb shell input text \"helloworld!\"')
+
 
