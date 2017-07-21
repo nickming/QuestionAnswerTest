@@ -75,13 +75,13 @@ class ModuleTest(object):
         try:
             self.init_activity()
             #搜题模块
-            # self.__start_search()
+            self.__start_search()
 
             #刷题模块
             # self.__start_pratise()
 
             #题库模块
-            # self.__start_market()
+            self.__start_market()
 
             #我的模块
             # self.tool.write_log_to_file()
